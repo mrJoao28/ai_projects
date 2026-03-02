@@ -1,7 +1,7 @@
 from transformers import AutoImageProcessor, AutoModelForImageClassification
 import torch
 import cv2
-import os
+
 def main():
 
     cap = cv2.VideoCapture(0)
@@ -15,7 +15,6 @@ def main():
     image_processor = AutoImageProcessor.from_pretrained("microsoft/resnet-18")
     model = AutoModelForImageClassification.from_pretrained("microsoft/resnet-18")
 
-    cv2.imshow()
 
 
     while True:
@@ -24,6 +23,7 @@ def main():
         frame = cv2.cvtColor(frame,cv2.COLOR_BAYER_BG2BGR)
 
         if not ret:
+     
             return 1
         
         inputs = image_processor(frame, return_tensors="pt")
