@@ -3,15 +3,14 @@ import torch
 import cv2
 import os
 def main():
-    print("oi")
+
     cap = cv2.VideoCapture(0)
 
     if not cap.isOpened():
         print("The camera dosent open")
         exit()
         return 1
-    
-    print("aqui")
+
     
     image_processor = AutoImageProcessor.from_pretrained("microsoft/resnet-18")
     model = AutoModelForImageClassification.from_pretrained("microsoft/resnet-18")
