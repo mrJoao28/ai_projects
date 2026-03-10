@@ -11,3 +11,18 @@ img_rgb = cv2.cvtColor(img , cv2.COLOR_BGR2RGB)
 img_gray = cv2.cvtColor(img , cv2.COLOR_BGR2GRAY)
 img_hsv = cv2.cvtColor(img , cv2.COLOR_BGR2HSV)
 img_lab = cv2.cvtColor(img , cv2.COLOR_BGR2LAB)
+
+h = img_hsv[:,:,0]
+
+#INTER_NEAREST
+#INTER_LINEAR
+
+fhd = (1920,1080)
+
+img_fhd  = cv2.resize(
+    img_rgb,
+    fhd,
+    interpolation = cv2.INTER_CUBIC
+
+)
+
