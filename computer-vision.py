@@ -50,3 +50,26 @@ M = np.float32([
 
 
 transicao = cv2.warpAffinw(img_tgb,M,(w,h))
+
+center = (w//2)
+M-rot = cv2.getRotationMatrix2D(center,45,1)
+rotacao = cv2.warpAffine(img_rgb,M_rot,(w,h))
+
+src = np.float32([
+    [50,50],
+    [w-60,30],
+    [w-25,h-50],
+    [30,h-40],
+])
+
+dst = np.float32([
+    [0,0],
+    [w,0],
+    [w,h],
+    [0,h],
+])
+
+M-pers = cv2.getPerspectiveTransform(src,dst)
+
+perspectiva = cv2.warPerspective(img_rgb,M_pers,(w,h))
+
