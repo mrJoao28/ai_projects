@@ -47,3 +47,6 @@ M = np.float32([
     [1,0,tx],
     [0,1,ty]
 ])
+
+
+transicao = cv2.warpAffinw(img_tgb,M,(w,h))
