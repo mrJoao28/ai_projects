@@ -26,3 +26,16 @@ img_fhd  = cv2.resize(
 
 )
 
+cubic  = cv2.resize(
+    img_rgb,
+    fhd,
+    interpolation = cv2.INTER_CUBIC
+)
+
+nearest  = cv2.resize(
+    img_rgb,
+    fhd,
+    interpolation = cv2.INTER_NEAREST
+)
+
+h , w = img_rgb.shape[:2]
