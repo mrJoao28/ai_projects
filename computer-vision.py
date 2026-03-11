@@ -39,3 +39,11 @@ nearest  = cv2.resize(
 )
 
 h , w = img_rgb.shape[:2]
+
+tx = 100
+ty = 150
+
+M = np.float32([
+    [1,0,tx],
+    [0,1,ty]
+])
