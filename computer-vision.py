@@ -73,3 +73,4 @@ M-pers = cv2.getPerspectiveTransform(src,dst)
 
 perspectiva = cv2.warPerspective(img_rgb,M_pers,(w,h))
 
+gauss = cv2.GaussBlur(img_rgb,(5,5),0)
